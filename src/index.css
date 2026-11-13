@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Product-wide visual normalization (loaded after page styles). */
+.auth-shell { background: radial-gradient(ellipse at 85% 8%, rgba(200,180,255,.45), transparent 38%), var(--off-white); color: var(--ink-black); }
+.auth-shell__logo { color: var(--ink-black); letter-spacing: -.8px; }
+.auth-card { background: #fff; color: var(--ink-black); border: 1px solid var(--color-border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
+.auth-card__title { color: var(--ink-black); line-height: 1.2; }
+.auth-card__subtitle, .auth-switch { color: var(--color-text-muted); }
+.auth-field label { color: var(--ink-black); }
+.auth-field input, .bucket-form__input { color: var(--ink-black); background: #fff; border: 1px solid rgba(30,30,30,.2); border-radius: var(--r-sm); min-height: 46px; }
+.auth-field input:focus, .bucket-form__input:focus { border-color: var(--cobalt-blue); box-shadow: var(--shadow-focus); }
+.auth-error { color: #812727; background: #FFF0EE; border-color: #E5B3AD; }
+.auth-switch a { color: #3049D8; }
+.space-option-btn { color: var(--ink-black); background: #fff; border-color: var(--color-border); }
+.space-option-btn span, .space-note { color: var(--color-text-muted); }
+.space-option-btn[data-active="true"] { border-color: var(--cobalt-blue); background: rgba(200,180,255,.2); }
+.space-code-display { background: #fff; border-color: var(--cobalt-blue); }
+.space-code-display__code { color: var(--cobalt-blue); overflow-wrap: anywhere; }
+.dash-hero { color: var(--ink-black); background: var(--lavender); }
+.dash-hero__text p, .dash-card p { color: var(--color-text-muted); }
+.dash-hero__cta, .dash-invite__code { color: #3049D8; }
+.dash-invite { border-color: var(--cobalt-blue); }
+.dash-card, .game-card { color: var(--ink-black); background: #fff; }
+.game-card:hover, .dash-card:hover { border-color: rgba(79,107,255,.5); }
+.game-card p { color: var(--color-text-muted); }
+.game-card--soon { opacity: .72; }
+.game-back { color: var(--color-text-muted); }
+.tod-choice { color: var(--ink-black); background: var(--butter-yellow); border-radius: var(--r-lg); cursor: pointer; }
+.tod-choice:nth-child(2) { background: var(--lavender); }
+.flip-card__face--back { background: linear-gradient(145deg, var(--cobalt-blue), #7F91FF); }
+.flip-card__face--front { background: #fff; color: var(--ink-black); border: 1px solid var(--color-border); }
+.bucket-progress, .bucket-add-card, .bucket-item { background: #fff; color: var(--ink-black); }
+.bucket-progress__top, .bucket-section h2, .bucket-item__date, .bucket-item__note { color: var(--color-text-muted); }
+.bucket-progress__track { background: #ECE8E1; }
+.bucket-progress__fill { background: var(--cobalt-blue); }
+.bucket-form__input::placeholder { color: #716D68; }
+.bucket-item__text { color: var(--ink-black); }
+.bucket-item__check { border-color: rgba(30,30,30,.35); }
+.bucket-item__icon-btn { color: var(--color-text-muted); }
+.bucket-item__icon-btn:hover { color: var(--ink-black); background: rgba(200,180,255,.28); }
+.ludo-board, .tic-tac-toe-board { max-width: 100%; }
+@media (max-width: 390px) {
+  .auth-shell { padding-inline: 14px; }
+  .auth-card { padding: 22px 18px; }
+  .hero h1 { letter-spacing: -2px; }
+  .landing-features { grid-template-columns: minmax(0, 1fr); }
+  .hero-sticker--left { left: 5%; }
+  .hero-sticker--right { right: 5%; }
+  .art-card { padding: 10px; }
+  .art-heart { font-size: 28px; }
+  .bucket-item { gap: 9px; padding: 12px; }
+  .bucket-item__actions { flex-wrap: wrap; }
+}

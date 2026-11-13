@@ -1,0 +1,55 @@
+.shared-room-loading{padding:3rem 1rem;text-align:center;color:var(--ink,#1e1e1e)}
+.shared-room-gate{min-height:65vh;display:grid;place-items:center;padding:24px 14px;color:var(--ink,#1e1e1e)}
+.shared-room-back{justify-self:start;align-self:start;color:inherit;text-decoration:none;margin:0 auto 10px;max-width:560px;width:100%;font-weight:700}
+.shared-room-card{width:min(100%,560px);background:#fffdf7;border:1px solid #e8e3d7;border-radius:28px;padding:clamp(22px,5vw,38px);box-shadow:0 18px 60px #1e1e1e12;text-align:center}
+.shared-room-eyebrow{font-size:11px;letter-spacing:.16em;font-weight:900;color:#4f6bff}
+.shared-room-icon{width:58px;height:58px;margin:18px auto 12px;border-radius:20px;background:#ffe066;display:grid;place-items:center;font-size:30px}
+.shared-room-card h1{font-size:clamp(25px,5vw,36px);line-height:1.08;margin:0 0 12px;color:#1e1e1e}
+.shared-room-intro{color:#65615a;line-height:1.55;margin:0 auto 22px;max-width:420px}
+.shared-room-code{display:flex;justify-content:center;gap:8px;margin:20px 0 10px}
+.shared-room-code span{width:clamp(38px,10vw,54px);height:58px;border-radius:13px;background:#4f6bff;color:white;display:grid;place-items:center;font-size:clamp(21px,5vw,28px);font-weight:900;letter-spacing:.02em;box-shadow:0 5px 0 #344dcc}
+.shared-room-copy,.shared-room-join button{border:0;border-radius:12px;padding:12px 17px;background:#1e1e1e;color:#fff;font-weight:800;cursor:pointer}
+.shared-room-join{border-top:1px solid #ece8df;margin-top:24px;padding-top:20px;text-align:left}
+.shared-room-join label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}
+.shared-room-join>div{display:flex;gap:8px}
+.shared-room-join input{min-width:0;flex:1;border:1px solid #d9d4c9;border-radius:12px;padding:12px;font:inherit;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.shared-room-join button{background:#4f6bff;white-space:nowrap}.shared-room-join button:disabled{opacity:.45;cursor:not-allowed}
+.shared-room-people{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.shared-room-person{background:#f5f2ea;border-radius:14px;padding:13px;text-align:left;font-weight:800;font-size:13px}
+.shared-room-person i,.shared-room-status i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#b7b1a5;margin-right:7px}
+.shared-room-person.is-here i,.shared-room-status i{background:#22a06b;box-shadow:0 0 0 3px #22a06b20}
+.shared-room-person small{display:block;margin:5px 0 0 15px;color:#777;font-weight:500}
+.shared-room-wait{color:#4f6bff;font-size:13px;font-weight:800;margin:18px 0 5px;min-height:18px}
+.shared-room-note{font-size:12px;line-height:1.5;color:#817b70;margin:8px 0 0}
+.shared-room-status{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#fff9df;border:1px solid #f0e5ae;border-radius:14px;padding:10px 14px;margin:0 0 20px;color:#1e1e1e;font-size:12px}
+.shared-room-status span:first-child{font-weight:800}.shared-room-status strong{letter-spacing:.15em;color:#4f6bff}
+@media(max-width:480px){.shared-room-join>div{flex-direction:column}.shared-room-join button{width:100%}.shared-room-status{font-size:11px}}
+.shared-room-access{display:grid;gap:16px;margin:14px 0 0}
+.shared-room-code-block{display:grid;justify-items:center;gap:5px}
+.shared-room-field-label{color:#8178a2;font-size:9px;font-weight:950;letter-spacing:.15em}
+.shared-room-code-block .shared-room-code{margin:8px 0 5px}
+.shared-room-join{display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px solid #ece8df;margin-top:10px;padding-top:16px;text-align:left}
+.shared-room-form-field{display:grid;gap:6px;min-width:0}
+.shared-room-form-field label{font-size:11px;font-weight:850;color:#4b4850}
+.shared-room-form-field input{width:100%;min-width:0;box-sizing:border-box;border:1px solid #d9d4c9;border-radius:11px;padding:11px 12px;font:inherit;font-size:13px;background:#fff}
+.shared-room-form-field:first-child input{letter-spacing:.13em;text-transform:uppercase;font-weight:850}
+.shared-room-join>button{grid-column:1/-1;border:0;border-radius:12px;padding:12px 16px;background:#4f6bff;color:#fff;font-weight:850;cursor:pointer}
+.shared-room-join>button:disabled{opacity:.5;cursor:not-allowed}
+.shared-room-feedback{grid-column:1/-1;margin:0;color:#4f6bff;font-size:11px;font-weight:750}
+.shared-room-exit,.shared-room-bucket{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:10px;text-decoration:none;font-size:11px;font-weight:850;white-space:nowrap}
+.shared-room-exit{background:#4f6bff;color:#fff}
+.shared-room-bucket{background:#fff;color:#1e1e1e;border:1px solid #e8e3d7}
+.shared-room-tools{margin:-8px 0 16px;padding:10px 14px;border:1px solid #e8e3d7;border-radius:14px;background:#fff}
+.shared-room-tools summary{cursor:pointer;color:#4f6bff;font-size:11px;font-weight:850}
+.shared-room-tools .shared-room-access{grid-template-columns:190px 1fr;align-items:center;gap:20px}
+.shared-room-tools .shared-room-code{gap:4px}
+.shared-room-tools .shared-room-code span{width:27px;height:34px;border-radius:7px;font-size:16px;box-shadow:0 3px 0 #344dcc}
+.shared-room-tools .shared-room-copy{padding:8px 12px;font-size:10px}
+.shared-room-tools .shared-room-join{margin:0;padding:0;border:0;grid-template-columns:1fr 1fr auto;align-items:end;gap:8px}
+.shared-room-tools .shared-room-join>button{grid-column:auto;padding:11px 12px;font-size:10px}
+.shared-room-tools .shared-room-feedback{grid-column:1/-1}
+.shared-room-status{align-items:center}
+.shared-room-status strong{font-size:13px}
+.shared-lounge-bucket-link{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:24px;padding:16px 18px;border:1px solid #e8e3d7;border-radius:16px;background:#fff9df;color:#1e1e1e;text-decoration:none;font-weight:850}
+.shared-lounge-bucket-link span{color:#6f6a63;font-size:11px;font-weight:600}
+@media(max-width:700px){.shared-room-status{align-items:flex-start}.shared-room-tools .shared-room-access{grid-template-columns:1fr}.shared-room-tools .shared-room-join{grid-template-columns:1fr}.shared-room-tools .shared-room-join>button{grid-column:1}.shared-room-join{grid-template-columns:1fr}.shared-room-join>button{grid-column:1}.shared-lounge-bucket-link{align-items:flex-start;flex-direction:column}.shared-room-exit,.shared-room-bucket{font-size:10px}}

@@ -1,0 +1,173 @@
+// Truth or Dare prompt bank for Far & Near.
+// Each category has its own truths + dares. Keep tone romantic/warm; the
+// "spicy" category stays flirty and tasteful, never explicit.
+
+export const CATEGORIES = [
+  { id: "cute", label: "Cute" },
+  { id: "romantic", label: "Romantic" },
+  { id: "funny", label: "Funny" },
+  { id: "deep", label: "Deep" },
+  { id: "spicy", label: "Spicy" },
+];
+
+export const TRUTH_OR_DARE = {
+  cute: {
+    truths: [
+      "What's a small habit of mine that makes you smile?",
+      "What's your favorite nickname for me, and why that one?",
+      "What was your first thought the last time you saw my face on a call?",
+      "What's a tiny thing I do that you secretly find adorable?",
+      "What song reminds you of me?",
+      "What's your favorite photo of us, and why?",
+      "What's one thing about me you'd want the whole world to know?",
+      "What's the softest memory you have of us together?",
+      "What do you look forward to most on our calls?",
+      "If I were a snack, which one would I be and why?",
+      "What's your favorite thing to call me when you're feeling sappy?",
+      "What made you smile about me today, before we even talked?",
+    ],
+    dares: [
+      "Send me the most recent selfie in your camera roll, no filter.",
+      "Do your best impression of me for ten seconds.",
+      "Send a voice note saying good morning/night in the silliest voice you have.",
+      "Describe me using only three emojis.",
+      "Send me a video blowing a kiss to the camera.",
+      "Draw a tiny doodle of us and send a photo of it.",
+      "Send a voice note of you laughing for five seconds.",
+      "Text me a compliment using the cheesiest words you know.",
+      "Change my contact name in your phone to something extra sweet, right now.",
+      "Send a photo of something in your room that reminds you of me.",
+      "Record yourself doing a tiny happy dance.",
+      "Send me a virtual hug — arms out, on camera, no explanation.",
+    ],
+  },
+  romantic: {
+    truths: [
+      "When did you know you were falling for me?",
+      "What's a moment with me you replay in your head?",
+      "What do you imagine our first hug back will feel like?",
+      "What's something about our relationship you're quietly proud of?",
+      "What's your favorite way I show that I love you?",
+      "What's a dream you have for our future together?",
+      "What's the most romantic thing you've thought about doing with me?",
+      "What do you miss most about being close to me?",
+      "What's a love song that feels like it was written about us?",
+      "What's one thing you want to whisper to me the next time we meet?",
+      "What does home mean to you now that I'm part of it?",
+      "What's a promise you want to make to me tonight?",
+    ],
+    dares: [
+      "Write me a two-line love note and read it out loud.",
+      "Tell me three things you love about me, one at a time, slowly.",
+      "Send a voice note describing our reunion day in detail.",
+      "Plan our next date night, out loud, right now.",
+      "Send me a playlist link with one song that reminds you of us.",
+      "Describe, in detail, your favorite memory of holding my hand.",
+      "Write a tiny love letter and send a photo of it.",
+      "Tell me the story of us as if narrating a movie trailer.",
+      "Send a voice message reading your favorite love quote to me.",
+      "Describe what our perfect Sunday together would look like.",
+      "Tell me one thing you've never said out loud but always felt.",
+      "Send me a message as if it's the last one you'd ever get to send.",
+    ],
+  },
+  funny: {
+    truths: [
+      "What's the weirdest dream you've had about me?",
+      "What's the most ridiculous thing you've done to distract yourself while missing me?",
+      "What's an embarrassing thing you've done during a video call with me?",
+      "What's the strangest food combo you secretly enjoy?",
+      "What's a silly argument we've had that makes you laugh now?",
+      "What's the most dramatic reaction you've had to a text from me?",
+      "What's a weird noise or habit of mine you find funny?",
+      "What's the last thing that made you laugh out loud today?",
+      "What's your most useless talent?",
+      "What's a lie you told me that you now have to confess?",
+      "What's the funniest autocorrect fail you've sent me?",
+      "What's a nickname you've secretly given me that I don't know about?",
+    ],
+    dares: [
+      "Send a voice note doing your worst celebrity impression.",
+      "Text me only in emojis for the next three messages.",
+      "Send a photo making the ugliest face you can.",
+      "Sing the chorus of a song badly on purpose and send the recording.",
+      "Talk in an accent for your next voice note to me.",
+      "Send me a meme that describes our relationship perfectly.",
+      "Do your best runway walk and send a video.",
+      "Try to make me laugh in one message. You have one shot.",
+      "Send a photo of the weirdest thing currently in your bag or pockets.",
+      "Record yourself narrating your day like a nature documentary.",
+      "Send a voice note pretending to be a news anchor reporting on us.",
+      "Reply to my next message entirely in movie quotes.",
+    ],
+  },
+  deep: {
+    truths: [
+      "What's the hardest part of loving someone long-distance?",
+      "What's a fear you have about our relationship that you rarely say out loud?",
+      "What's something you need from me more of right now?",
+      "What's a way I've helped you grow as a person?",
+      "What's something you've never told anyone but would tell me?",
+      "What does trust mean to you in this relationship?",
+      "What's a moment you felt truly understood by me?",
+      "What do you think love actually requires, beyond feeling it?",
+      "What's something you're working on for yourself right now?",
+      "What's a compromise in this relationship you're proud you made?",
+      "What does forever look like to you?",
+      "What's one thing you wish I understood about how you show love?",
+    ],
+    dares: [
+      "Share one insecurity you rarely talk about.",
+      "Tell me about a time I made you feel safe.",
+      "Describe what you think our life will look like in five years, honestly.",
+      "Tell me something you've been avoiding saying to me.",
+      "Share a memory from before we met that shaped how you love.",
+      "Tell me what you need more of from me, without softening it.",
+      "Describe the moment you felt most loved by me.",
+      "Tell me a lesson this distance has taught you about yourself.",
+      "Share something you're proud of that you haven't told me yet.",
+      "Tell me what 'home' means to you in one honest sentence.",
+      "Share a worry about the future and let me respond before you explain it away.",
+      "Tell me one thing you'd change about how we communicate.",
+    ],
+  },
+  spicy: {
+    truths: [
+      "What's your favorite thing about the way I look on camera?",
+      "What outfit of mine do you think about the most?",
+      "What's the first thing you want to do the moment we're finally alone together?",
+      "What's a compliment about your body you'd want to hear from me?",
+      "What song makes you think of us being close?",
+      "What's your favorite way to be held?",
+      "What's a small gesture of mine that you find irresistible?",
+      "What do you think about right before you fall asleep on nights we've talked?",
+      "What's one thing you find yourself daydreaming about, us-related?",
+      "What's your love language, and how do you wish I used it more?",
+      "What's the most you've ever blushed because of something I said?",
+      "What's a compliment you've wanted to give me but held back?",
+    ],
+    dares: [
+      "Send a voice note telling me what you love about my voice.",
+      "Send a photo of your favorite outfit you own, and tell me why.",
+      "Describe, in one message, the perfect date night ending.",
+      "Send me a voice note whispering three things you like about me.",
+      "Tell me, in detail, your favorite thing about hugging me.",
+      "Send a playlist of three songs that make you think of me and explain why.",
+      "Send a message telling me exactly how you'd greet me at the airport.",
+      "Describe the last dream you had that involved the two of us.",
+      "Send a voice note reading a short, flirty compliment about me out loud.",
+      "Tell me one thing you'd want to whisper in my ear right now.",
+      "Send a photo that captures 'you, thinking about me' energy.",
+      "Describe your ideal lazy Sunday morning together, in detail.",
+    ],
+  },
+};
+
+export function getRandomPrompt(categoryId, type, excludeText) {
+  const pool = TRUTH_OR_DARE[categoryId]?.[type] ?? [];
+  const validPool = pool.filter((p) => typeof p === "string" && p.trim());
+  const options = validPool.filter((p) => p !== excludeText);
+  const source = options.length ? options : validPool;
+  if (!source.length) return null;
+  return source[Math.floor(Math.random() * source.length)];
+}

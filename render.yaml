@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: far-near-app
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: far-near-db
+          property: connectionString
+      - key: ACCESS_TOKEN_SECRET
+        generateValue: true
+      - key: FRONTEND_ORIGINS
+        value: https://far-near-app.onrender.com
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: COOKIE_SAMESITE
+        value: lax
+      - key: TOKEN_ISSUER
+        value: far-and-near
+      - key: TOKEN_AUDIENCE
+        value: far-and-near-api
+
+databases:
+  - name: far-near-db
+    plan: basic-256mb
+    databaseName: far_and_near
+    user: far_near

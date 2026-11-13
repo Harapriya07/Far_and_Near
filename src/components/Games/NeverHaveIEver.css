@@ -1,0 +1,53 @@
+.nhie-round {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.nhie-card {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.nhie-card > .tag {
+  align-self: flex-start;
+  cursor: default;
+}
+
+.nhie-statement {
+  margin: 0;
+  font-size: clamp(19px, 2.6vw, 24px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.nhie-responses {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.nhie-response {
+  flex: 1;
+}
+
+.nhie-response--picked {
+  background: var(--cream);
+  color: var(--ink);
+  border-color: var(--cream);
+}
+
+.nhie-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.nhie-tally {
+  font-size: 13px;
+  color: var(--cream-dim);
+}

@@ -1,0 +1,68 @@
+/* Far & Near — shared design tokens. Legacy token names remain as aliases so existing screens keep working. */
+:root {
+  --butter-yellow: #FFE066;
+  --cobalt-blue: #4F6BFF;
+  --lavender: #C8B4FF;
+  --ink-black: #1E1E1E;
+  --off-white: #FAF9F6;
+  --forest-950: #FAF9F6;
+  --forest-900: #F3F1EC;
+  --forest-800: #EEEAF8;
+  --forest-700: #E4DEFF;
+  --forest-600: #4F6BFF;
+  --forest-500: #3D56D9;
+  --cream: #1E1E1E;
+  --cream-soft: rgba(30, 30, 30, 0.82);
+  --cream-dim: rgba(30, 30, 30, 0.65);
+  --ink: #1E1E1E;
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-bg-strong: #FFFFFF;
+  --glass-border: rgba(30, 30, 30, 0.16);
+  --glass-border-soft: rgba(30, 30, 30, 0.09);
+  --gold: #4F6BFF;
+  --gold-soft: rgba(79, 107, 255, 0.18);
+  --cat-cute: #C8B4FF;
+  --cat-romantic: #E9A6B2;
+  --cat-funny: #FFE066;
+  --cat-deep: #4F6BFF;
+  --cat-spicy: #D98476;
+  --success: #327A58;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+  --shadow-sm: 0 4px 16px rgba(30, 30, 30, 0.06);
+  --shadow-md: 0 10px 30px rgba(30, 30, 30, 0.09);
+  --shadow-lg: 0 18px 50px rgba(30, 30, 30, 0.12);
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+  --font: "Poppins", sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 0.18s;
+  --t-med: 0.3s;
+}
+
+/* Phase 2 semantic aliases and responsive design-system tokens */
+:root {
+  --color-brand-primary: var(--cobalt-blue);
+  --color-brand-accent: var(--butter-yellow);
+  --color-brand-soft: var(--lavender);
+  --color-text: var(--ink-black);
+  --color-text-muted: #625F5A;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F3F0EA;
+  --color-border: rgba(30, 30, 30, 0.13);
+  --color-focus: var(--cobalt-blue);
+  --color-danger: #9E3030;
+  --color-success: #286647;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: clamp(1.75rem, 4vw, 2.5rem);
+  --content-width: 1120px;
+  --page-gutter: clamp(1rem, 4vw, 2.5rem);
+  --r-xs: 6px;
+  --shadow-focus: 0 0 0 3px rgba(79, 107, 255, .22);
+}

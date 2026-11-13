@@ -1,0 +1,146 @@
+.game-page {
+  max-width: 640px;
+}
+
+.game-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--cream-dim);
+  text-decoration: none;
+  font-size: 13.5px;
+  margin-bottom: var(--sp-4);
+  transition: color var(--t-fast) var(--ease);
+}
+
+.game-back:hover {
+  color: var(--cream);
+}
+
+/* --- category chip row --- */
+.tod-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--sp-6);
+}
+
+.tod-categories .tag {
+  border: 0;
+}
+
+/* --- truth/dare picker --- */
+.tod-picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+  max-width: 460px;
+}
+
+.tod-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-7) var(--sp-4);
+  border: none;
+  color: var(--cream);
+  font-family: var(--font);
+}
+
+.tod-choice__icon {
+  font-size: 34px;
+}
+
+.tod-choice__label {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+@media (max-width: 500px) {
+  .tod-picker {
+    max-width: 100%;
+  }
+
+  .tod-choice {
+    padding: var(--sp-6) var(--sp-3);
+  }
+}
+
+/* --- flip card reveal --- */
+.tod-round {
+  max-width: 460px;
+}
+
+.flip-card {
+  perspective: 1400px;
+  min-height: 260px;
+}
+
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  transition: transform 0.6s var(--ease);
+  transform-style: preserve-3d;
+}
+
+.flip-card--flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--r-lg);
+}
+
+.flip-card__face--back {
+  background: linear-gradient(
+    155deg,
+    var(--forest-600),
+    var(--forest-800)
+  );
+  border: 1px solid var(--glass-border-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+.flip-card__face--front {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-6);
+  justify-content: center;
+}
+
+.flip-card__face--front .tag {
+  align-self: flex-start;
+  cursor: default;
+}
+
+.tod-prompt {
+  margin: 0;
+  font-size: clamp(19px, 2.6vw, 24px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.tod-actions {
+  display: flex;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+}
+
+.tod-actions .btn {
+  flex: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-card__inner {
+    transition: none;
+  }
+}
+.shared-game-error,.shared-game-compare{font-size:13px;color:#4f6bff;margin:14px 0;font-weight:650}

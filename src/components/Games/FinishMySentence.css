@@ -1,0 +1,60 @@
+.fms-round {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.fms-card {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.fms-sentence {
+  margin: 0;
+  font-size: clamp(19px, 2.6vw, 24px);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.fms-blank {
+  display: inline-block;
+  min-width: 60px;
+  padding: 0 6px;
+  border-bottom: 2px solid var(--gold);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.fms-input {
+  font-family: var(--font);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border-soft);
+  border-radius: var(--r-sm);
+  color: var(--cream);
+  padding: 12px 14px;
+  font-size: 14.5px;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.fms-input::placeholder {
+  color: var(--cream-dim);
+}
+
+.fms-input:focus {
+  outline: none;
+  border-color: var(--gold-soft);
+}
+
+.fms-next {
+  align-self: flex-start;
+}
+
+@media (max-width: 480px) {
+  .fms-next {
+    align-self: stretch;
+  }
+}

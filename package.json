@@ -1,0 +1,19 @@
+{
+  "name": "alya",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:qa": "node scripts/test-auth-bucket.mjs && node scripts/test-game-data.mjs && node scripts/test-tictactoe.mjs && node scripts/test-ludo.mjs && node scripts/test-route-config.mjs && node scripts/test-ludo-board.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.6.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.18.2",
+    "vite": "^7.1.0"
+  }
+}

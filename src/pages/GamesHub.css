@@ -1,0 +1,47 @@
+.games-hub {
+  max-width: 1000px;
+}
+
+.game-card {
+  padding: var(--sp-5);
+  text-decoration: none;
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.game-card__icon {
+  font-size: 30px;
+  margin-bottom: var(--sp-2);
+}
+
+.game-card h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.game-card p {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  color: var(--cream-dim);
+  line-height: 1.5;
+}
+
+.game-card--soon {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.game-card__badge {
+  margin-top: var(--sp-3);
+  cursor: default;
+  font-size: 11px;
+  padding: 4px 11px;
+}
+.shared-lounge-entry{display:flex;align-items:center;gap:14px;padding:17px 20px;margin:0 0 22px;text-decoration:none;color:inherit;border-radius:18px;background:#fff7d4;border:1px solid #f1e5ad}
+.shared-lounge-entry__icon{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:#ffe066;font-size:24px;flex:none}
+.shared-lounge-entry span:nth-child(2){display:grid;gap:4px;flex:1;min-width:0}.shared-lounge-entry strong{font-size:15px}.shared-lounge-entry small{font-size:12px;color:#69645a}.shared-lounge-entry>b{font-size:12px;color:#4f6bff;white-space:nowrap}
+@media(max-width:520px){.shared-lounge-entry{align-items:flex-start;flex-wrap:wrap}.shared-lounge-entry>b{margin-left:56px}}
