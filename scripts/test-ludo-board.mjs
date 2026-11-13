@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
-import { TRACK_COORDS, HOME, pieceCell } from "../src/components/Games/ludoBoard.js";
+import { TRACK_COORDS, HOME, YARDS, pieceCell } from "../src/components/Games/ludoBoard.js";
 import { PLAYER_COLORS, FINISH } from "../src/components/Games/ludoLogic.js";
 
+assert.deepEqual(YARDS[0], {r:0,c:0});
+assert.deepEqual(YARDS[3], {r:9,c:9}); // Red and Blue are diagonally opposite.
 assert.equal(TRACK_COORDS.length, 52);
 assert.equal(new Set(TRACK_COORDS.map(([r,c]) => `${r},${c}`)).size, 52);
 for (const [r,c] of TRACK_COORDS) assert.ok(r >= 0 && r < 15 && c >= 0 && c < 15);

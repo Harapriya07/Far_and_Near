@@ -14,10 +14,11 @@ PLAYER_HEX = ["#E85D5D", "#42A879", "#E6B938", "#4F6BFF"]
 SAFE_SQUARES = {0, 8, 13, 21, 26, 34, 39, 47}
 FINISH = 57
 STARTS = [0, 13, 26, 39]
-# Diagonal teams: player one owns Green + Blue; player two owns Red + Yellow.
-COLOR_OWNER = [1, 0, 1, 0]
-TURN_ORDER = [1, 2, 3, 0]
-RULES_VERSION = 3
+# Two-player mode: Player 1 owns Red (0), Player 2 owns Blue (3).
+COLOR_OWNER = [0, None, None, 1]
+ACTIVE_COLORS = (0, 3)
+TURN_ORDER = [0, 3]
+RULES_VERSION = 4
 
 
 def _next_turn(color_index: int) -> int:
@@ -25,19 +26,19 @@ def _next_turn(color_index: int) -> int:
 
 
 def _team_colors(team: int) -> tuple[int, int]:
-    return (1, 3) if team == 0 else (0, 2)
+    return (0,) if team == 0 else (3,)
 
 
 def new_game_state() -> dict:
     return {
         "rulesVersion": RULES_VERSION,
-        "turn": 1,
+        "turn": 0,
         "dice": None,
         "lastRoll": None,
         "lastRollPlayer": None,
-        "pieces": [[{"id": i, "step": -1} for i in range(4)] for _ in range(4)],
+        "pieces": [[{"id": i, "step": -1} for i in range(4)] if color in ACTIVE_COLORS else [] for color in range(4)],
         "winner": None,
-        "message": "Green starts. Roll a six to bring a token out.",
+        "message": "Red starts. Roll a six to bring a token out.",
     }
 
 
@@ -122,19 +123,19 @@ def _serialize(db: Session, room: LudoRoom, user_id: UUID) -> dict:
     partner_online = two_online if me_is_one else one_online
     my_team = 0 if me_is_one else 1
     partner_team = 1 - my_team
-    my_colors = list(_team_colors(my_team))
-    partner_colors = list(_team_colors(partner_team))
-    turn = room.game_state.get("turn", 1)
+    my_color = 0 if me_is_one else 3
+    partner_color = 3 if me_is_one else 0
+    turn = room.game_state.get("turn", 0)
     return {
         "id": str(room.id), "status": room.status, "state": room.game_state,
-        "me": {"id": str(me.id), "name": me.display_name, "team": my_team, "colorIndex": my_colors[0], "seatIndexes": my_colors},
-        "partner": ({"id": str(partner.id), "name": partner.display_name, "team": partner_team, "colorIndex": partner_colors[0], "seatIndexes": partner_colors} if partner else None),
+        "me": {"id": str(me.id), "name": me.display_name, "team": my_team, "colorIndex": my_color, "seatIndexes": [my_color]},
+        "partner": ({"id": str(partner.id), "name": partner.display_name, "team": partner_team, "colorIndex": partner_color, "seatIndexes": [partner_color]} if partner else None),
         "players": [
-            {"id": str(one.id), "name": one.display_name, "team": 0, "colorIndex": 1, "seatIndexes": [1, 3], "online": one_online},
-            *([{"id": str(two.id), "name": two.display_name, "team": 1, "colorIndex": 0, "seatIndexes": [0, 2], "online": two_online}] if two else []),
+            {"id": str(one.id), "name": one.display_name, "team": 0, "colorIndex": 0, "seatIndexes": [0], "online": one_online},
+            *([{"id": str(two.id), "name": two.display_name, "team": 1, "colorIndex": 3, "seatIndexes": [3], "online": two_online}] if two else []),
         ],
         "partnerOnline": partner_online, "bothOnline": my_online and partner_online,
-        "canAct": room.status == "playing" and my_online and partner_online and room.game_state.get("winner") is None and COLOR_OWNER[turn] == my_team,
+        "canAct": room.status == "playing" and my_online and partner_online and room.game_state.get("winner") is None and turn in ACTIVE_COLORS and COLOR_OWNER[turn] == my_team,
         "updatedAt": room.updated_at.isoformat() if room.updated_at else None,
     }
 
@@ -188,6 +189,8 @@ def _active_room(db: Session, user_id: UUID) -> LudoRoom:
 
 def _assert_turn(room: LudoRoom, user_id: UUID) -> None:
     color = room.game_state["turn"]
+    if color not in ACTIVE_COLORS:
+        raise AuthError(409, "invalid_game_state", "The current Ludo turn is not assigned to an active house.")
     expected = room.player_one_id if COLOR_OWNER[color] == 0 else room.player_two_id
     if expected != user_id:
         raise AuthError(409, "not_your_turn", "It's your partner's turn. Wait for them to play.")
@@ -233,17 +236,17 @@ def move_piece(db: Session, user_id: UUID, piece_id: int) -> dict:
     state["pieces"][color][piece_id] = {"id": piece_id, "step": step}
     captured = None; landing = _track_index(color, step)
     if landing is not None and landing not in SAFE_SQUARES:
-        for opponent_color in range(4):
-            if COLOR_OWNER[opponent_color] == COLOR_OWNER[color]:
+        for opponent_color in ACTIVE_COLORS:
+            if opponent_color == color:
                 continue
             for other in state["pieces"][opponent_color]:
                 if _track_index(opponent_color, other["step"]) == landing:
                     other["step"] = -1; captured = PLAYER_NAMES[opponent_color]
     team = COLOR_OWNER[color]
-    team_complete = all(piece["step"] == FINISH for color_index in _team_colors(team) for piece in state["pieces"][color_index])
+    team_complete = all(piece["step"] == FINISH for piece in state["pieces"][color])
     if team_complete:
         winner_user = db.get(User, room.player_one_id if team == 0 else room.player_two_id)
-        state.update({"dice": None, "winner": team, "message": f"{winner_user.display_name if winner_user else 'Player'} wins! All eight tokens are home."})
+        state.update({"dice": None, "winner": team, "message": f"{winner_user.display_name if winner_user else 'Player'} wins! All four tokens are home."})
         room.status = "finished"
     else:
         next_color = _next_turn(color)

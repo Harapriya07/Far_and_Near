@@ -143,3 +143,57 @@
 @media (max-width: 760px) {
   .ludo-player-row--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ALYA two-house edition */
+.ludo-page{max-width:1180px;padding-bottom:34px}
+.ludo-heading{align-items:center;margin:14px 0 24px}
+.ludo-heading h1{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.055em}
+.ludo-heading-die{display:inline-grid;place-items:center;width:38px;height:38px;margin-right:7px;border-radius:12px;background:#ffe066;color:#1e1e1e;font-size:22px;vertical-align:5px;box-shadow:0 5px 0 #e9cf63}
+.ludo-heading p:not(.page-head__eyebrow){font-size:14px}
+.ludo-layout{grid-template-columns:minmax(0,1fr) 290px;gap:20px}
+.ludo-game-card{padding:clamp(13px,2vw,22px);border:1px solid #eee8df;border-radius:30px;background:linear-gradient(145deg,#fff 0%,#faf9f6 100%);box-shadow:0 22px 65px #342b1b12}
+.ludo-player-row--two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.ludo-player-row--two .ludo-player-card{min-width:0;padding:13px 14px;border:1px solid #eee9e2;border-radius:19px;background:#fff;box-shadow:0 5px 16px #29241b08}
+.ludo-player-row--two .ludo-player-card.is-turn{border-color:var(--seat-color);box-shadow:0 0 0 2px color-mix(in srgb,var(--seat-color) 16%,transparent),0 9px 24px #29241b0c;animation:ludo-active-glow 2.6s ease-in-out infinite}
+@keyframes ludo-active-glow{50%{box-shadow:0 0 0 4px color-mix(in srgb,var(--seat-color) 10%,transparent),0 9px 24px #29241b0c}}
+.ludo-player-card--red{--seat-color:#e85d5d!important}.ludo-player-card--blue{--seat-color:#4f6bff!important}
+.ludo-player-info{display:flex;align-items:center;gap:10px;min-width:0}
+.ludo-player-info .ludo-seat__avatar{width:40px;height:40px;flex-basis:40px;border-radius:14px;background:color-mix(in srgb,var(--seat-color) 14%,white);color:var(--seat-color);font-size:16px}
+.ludo-player-info .ludo-seat__copy strong{font-size:13px;color:#25232a}
+.ludo-player-info .ludo-seat__copy small{font-size:10px;color:#89827c}
+.ludo-dice-square{width:64px;height:66px;flex:0 0 64px;gap:4px;border:1px solid #e8e3dc;border-radius:15px;background:#f8f7f3;box-shadow:0 3px 0 #e8e3dc;transition:transform .2s,box-shadow .2s,border-color .2s}
+.ludo-dice-square.is-active{border-color:color-mix(in srgb,var(--seat-color) 55%,white);background:color-mix(in srgb,var(--seat-color) 5%,white);box-shadow:0 3px 0 color-mix(in srgb,var(--seat-color) 22%,white)}
+.ludo-die-face{width:45px;height:45px;border-radius:12px;background:linear-gradient(145deg,#fff,#f2f0ea);box-shadow:0 4px 9px #29241b19,inset 0 1px 0 white}
+.ludo-die-face.is-rolling{animation:ludo-dice-tumble .9s cubic-bezier(.2,.75,.2,1)}
+.ludo-dice-caption{font-size:8px;letter-spacing:.13em}
+.ludo-seat-turn-label{left:14px;bottom:-7px;padding:4px 9px;font-size:8px}
+.ludo-board-frame{padding:12px;border:1px solid #37343d;border-radius:23px;background:linear-gradient(145deg,#26252e,#1d1c24);box-shadow:0 16px 35px #1e1e1e20}
+.ludo-board-label{padding:3px 5px 12px;font-size:9px;letter-spacing:.13em}
+.ludo-board{border:3px solid #25242b;border-radius:15px;background:#fff;gap:1px}
+.ludo-cell{border-color:#e9e6df}
+.ludo-cell--track{background:#fffefa}
+.ludo-cell--safe{background:#fff1b1}
+.ludo-cell--yard-1,.ludo-cell--yard-2,.ludo-cell--home-1,.ludo-cell--home-2{opacity:.36;filter:saturate(.28)}
+.ludo-cell--yard-0,.ludo-cell--yard-3,.ludo-cell--home-0,.ludo-cell--home-3{opacity:1;filter:none}.ludo-cell--yard-0,.ludo-cell--yard-3{border-width:1px}
+.ludo-cell--yard-0{--yard-color:#e85d5d!important}
+.ludo-cell--yard-3{--yard-color:#4f6bff!important}
+.ludo-cell--home-0{--home-color:#e85d5d!important}
+.ludo-cell--home-3{--home-color:#4f6bff!important}
+.ludo-cell--center{background:conic-gradient(#e85d5d 0 25%,#d9d6d0 0 50%,#4f6bff 0 75%,#d9d6d0 0);border:2px solid #fff}
+.ludo-piece{max-width:26px;box-shadow:0 3px 6px #17151a38,inset 0 2px 3px #ffffff80}
+.ludo-color-legend{gap:18px;padding:15px 5px 1px;font-size:10px}
+.ludo-muted-legend{color:#aaa39a;font-weight:600}
+.ludo-side-panel{gap:13px}
+.ludo-turn-card,.ludo-wait-card,.ludo-how-card{border-color:#eee8df;box-shadow:0 12px 34px #2d251b0b}
+.ludo-turn-heading h2{font-size:24px}
+.ludo-turn-message{font-size:12px}
+.ludo-team-note{grid-template-columns:14px 1fr;gap:9px 7px}
+.ludo-team-note span:nth-of-type(2){color:#4f6bff}
+.ludo-how-card ul{font-size:11px;line-height:1.55}
+.ludo-roll-button{background:#4f6bff}
+@media(max-width:900px){.ludo-layout{grid-template-columns:minmax(0,1fr) 260px;gap:14px}.ludo-game-card{padding:12px}}
+@media(max-width:760px){.ludo-layout{grid-template-columns:1fr}.ludo-side-panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.ludo-side-panel>.ludo-how-card,.ludo-side-panel>.ludo-connection-note{grid-column:1/-1}}
+@media(max-width:520px){.ludo-page{padding-inline:12px}.ludo-heading{align-items:flex-start;gap:10px}.ludo-heading h1{font-size:27px}.ludo-heading-die{width:31px;height:31px;font-size:18px}.ludo-heading>div:first-child>p:not(.page-head__eyebrow){font-size:11px}.ludo-room-pill{padding:8px 10px;font-size:9px}.ludo-game-card{padding:9px;border-radius:21px}.ludo-player-row--two{gap:7px;margin-bottom:10px}.ludo-player-row--two .ludo-player-card{padding:8px 7px;gap:5px;border-radius:13px}.ludo-player-row--two .ludo-player-info{gap:5px}.ludo-player-row--two .ludo-seat__avatar{width:29px;height:29px;flex-basis:29px;border-radius:10px;font-size:12px}.ludo-player-row--two .ludo-seat__copy strong{max-width:76px;font-size:9px}.ludo-player-row--two .ludo-seat__copy small{font-size:7px}.ludo-player-row--two .ludo-seat__presence{display:none}.ludo-dice-square{width:49px;height:52px;flex-basis:49px;padding:3px;border-radius:10px}.ludo-die-face{width:34px;height:34px;border-radius:8px}.ludo-pips{width:23px;height:23px}.ludo-pips i{width:5px;height:5px}.ludo-dice-caption{font-size:6px}.ludo-seat-turn-label{left:7px;font-size:6px}.ludo-board-frame{padding:7px;border-radius:16px}.ludo-board-label{font-size:7px;letter-spacing:.08em;padding-bottom:8px}.ludo-board{border-width:2px;border-radius:10px}.ludo-side-panel{grid-template-columns:1fr}.ludo-side-panel>.ludo-how-card,.ludo-side-panel>.ludo-connection-note{grid-column:auto}.ludo-turn-card,.ludo-wait-card,.ludo-how-card{padding:16px;border-radius:17px}}
+@media(prefers-reduced-motion:reduce){.ludo-player-card.is-turn{animation:none}.ludo-die-face.is-rolling{animation:none}}
+.ludo-heading-actions{display:flex;align-items:center;gap:9px;flex:0 0 auto}.ludo-settings{position:relative}.ludo-settings summary{list-style:none;display:flex;align-items:center;gap:6px;padding:10px 13px;border:1px solid #e8e2d9;border-radius:999px;background:#fff;color:#514d55;font-size:12px;font-weight:800;cursor:pointer}.ludo-settings summary::-webkit-details-marker{display:none}.ludo-settings>div{position:absolute;z-index:5;right:0;top:calc(100% + 8px);width:230px;padding:14px;border:1px solid #eee8df;border-radius:15px;background:#fff;box-shadow:0 12px 30px #1e1e1e18;color:#514d55;font-size:11px;line-height:1.5}.ludo-settings p{margin:6px 0 0!important;font-size:11px!important;line-height:1.5}.ludo-player-row--two .ludo-seat__copy small{font-size:9px}.ludo-piece{animation:ludo-token-land .22s ease-out}@keyframes ludo-token-land{from{transform:scale(.72);opacity:.65}to{transform:scale(1);opacity:1}}
+@media(max-width:520px){.ludo-heading-actions{gap:5px;flex-direction:column;align-items:flex-end}.ludo-settings summary{padding:7px 9px;font-size:9px}.ludo-room-pill{padding:7px 9px}.ludo-player-row--two .ludo-seat__copy small{font-size:6px}}

@@ -16,7 +16,7 @@ export const HOME = [
   [[12,7],[11,7],[10,7],[9,7],[8,7]],
 ];
 
-export const YARDS = [{r:0,c:0},{r:0,c:9},{r:9,c:9},{r:9,c:0}];
+export const YARDS = [{r:0,c:0},{r:0,c:9},{r:9,c:0},{r:9,c:9}];
 
 export function pieceCell(player, piece) {
   if (piece.step === -1) {
