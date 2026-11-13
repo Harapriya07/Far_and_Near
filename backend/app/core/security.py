@@ -31,6 +31,16 @@ def verify_password(password_hash: str, password: str) -> bool:
 
 def _token_secret() -> str:
     settings = get_settings()
+
+    print("AUTH CONFIG CHECK:")
+    print("Secret present:", bool(settings.access_token_secret))
+    print("Secret length:", len(settings.access_token_secret.encode("utf-8")))
+    print("Access TTL:", settings.access_token_ttl_minutes)
+    print("Refresh TTL:", settings.refresh_token_ttl_days)
+    print("SameSite:", settings.cookie_samesite)
+    print("Cookie Secure:", settings.cookie_secure)
+    print("APP_ENV:", settings.app_env)
+
     secret = settings.access_token_secret
     if len(secret.encode("utf-8")) < 32 or secret.lower().startswith("replace_"):
         raise AuthConfigurationError("Authentication signing secret is not configured")
@@ -44,6 +54,7 @@ def _token_secret() -> str:
         raise AuthConfigurationError("Secure cookies are required in production")
     if settings.cookie_samesite == "none" and not settings.cookie_secure:
         raise AuthConfigurationError("SameSite=None requires Secure cookies")
+
     return secret
 
 
