@@ -48,8 +48,17 @@ def auth_error_handler(request: Request, exc: AuthError) -> JSONResponse:
 
 @app.exception_handler(AuthConfigurationError)
 def auth_configuration_handler(request: Request, exc: AuthConfigurationError) -> JSONResponse:
-    # Do not return secret values or raw configuration details.
-    return JSONResponse(status_code=503, content={"error": {"code": "auth_not_configured", "message": "Authentication is temporarily unavailable", "details": []}})
+    print(f"AUTH CONFIGURATION ERROR: {exc!r}", flush=True)
+    return JSONResponse(
+        status_code=503,
+        content={
+            "error": {
+                "code": "auth_not_configured",
+                "message": "Authentication is temporarily unavailable",
+                "details": []
+            }
+        }
+    )
 
 
 @app.exception_handler(DatabaseConfigurationError)
